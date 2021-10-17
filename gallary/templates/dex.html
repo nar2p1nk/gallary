@@ -1,0 +1,31 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Gallary</title>
+  <link rel="stylesheet" type="text/css" href="{% static 'gallaryCss/main.css' %}">
+</head>
+<body>
+
+  <div class='NavList'>
+    <div class="button home"><a href='home'>Home</a></div>
+    <div class="button contact "><a href='ass'>Contact me</a></div>
+    <div class="button post"><a href='ass'>Post</a></div>
+  </div>
+
+  <div class="list">
+    {% for image in object_list %}
+    <div class="contain">
+    <img src="{{image.img.url}}" alt="{{image.title}}">
+      <div class='overlay'>
+        <div class='pp'>
+          <h1 class='title'>{{image.title}}</h1>
+          <p class='artist'>{{image.created_by}}</p>
+        </div>
+      </div>
+    </div>
+    {% endfor%}
+  </div>
+</body>
+</html>
