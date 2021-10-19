@@ -1,8 +1,13 @@
 from django import forms
 
+from gallary.models import Profiles
 
 class PostForm(forms.Form):
-    title = forms.CharField(widget=forms.TextInput(attrs={'class' : 'title'}), max_length=80)
-    created_by = forms.CharField(label='created by', max_length=35)
-    img = forms.ImageField()
+    Ftitle = forms.CharField()
+    Fcreated_by = forms.CharField(label='Created by: ',max_length=35)
+    Fimg = forms.ImageField(label='image')
 
+class PostForm2(forms.ModelForm):
+    class Meta:
+        model = Profiles
+        fields = ['title','created_by','img']

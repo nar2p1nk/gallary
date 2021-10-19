@@ -8,13 +8,12 @@
   <link rel='stylesheet' type='text/css'  href='{% static 'gallaryCss/form.css' %}'>
 </head>
 <body>
-  <form class="form" action="/gallary/" method='post'>
+  <form enctype="multipart/form-data" class="form" method='post'>
     {% csrf_token %}
+    {{form.as_p}}
 
-    {{form}}
-
-    <input class='submit' type="submit" value='submit'>
-
+    <button type='submit'>Post</button>
   </form>
+
 </body>
 </html>

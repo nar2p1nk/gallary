@@ -1,32 +1,23 @@
+from django.http.response import HttpResponseRedirect
 from django.shortcuts import render
 from .models import Profiles
-from django.views.generic import ListView
-from django.http import HttpResponseRedirect
-from .forms import PostForm
+from django.views.generic import ListView,CreateView
+#from django.http import HttpResponseRedirect
+from .forms import PostForm,PostForm2
+from django.urls import reverse_lazy
+#from django.views.generic.edit import FormView
 # Create your views here.
 
 
 class Display(ListView):
     model=Profiles
-    template_name='dex.html'
+    template_name = 'dex.html'
 
-def send(request):
+class send(CreateView):
+    model = Profiles
+    form_class = PostForm2
+    template_name = 'form.html'
+    success_url = reverse_lazy('home')
 
-    if request.method == 'POST':
-
-        form = PostForm(request.POST)
-
-        if form.is_valid():
-
-            return HttpResponseRedirect('home/')
-
-    else:
-
-        form = PostForm()
-
-
-    return render(request,'form.html',{'form':form})
-
-
-
-
+def home(request):
+    return render(request, 'home.html',{})
