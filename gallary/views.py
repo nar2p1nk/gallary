@@ -21,3 +21,6 @@ class send(CreateView):
 
 def home(request):
     return render(request, 'home.html',{})
+
+# homepage1 | homepage2
+#     1            2

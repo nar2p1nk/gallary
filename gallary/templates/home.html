@@ -1,10 +1,32 @@
+{% load static%}
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title></title>
+  <title>Gallary</title>
+  <link rel="stylesheet" type="text/css" href="{% static 'gallaryCss/home.css' %}">
 </head>
 <body>
-<h1>Hello World</h1>
+  <div class='top'>
+    <div class='welcomeDiv'>  
+      <h1 class='main'>welcome to gallary</h1>
+      <p class='secondary'>made by <span class='loser'>Farris Isqandar</span> nar2 for my art teacher!</p>
+      <div class="home"><a href="{% url 'gallary'%}">Browse now!</a></div>
+    </div>
+    <div class='tD'>
+      <img class='props prop-1' src='{% static "pics/fluttershy_by_novabytes_daw6k93.png" %}' alt='pp'/>
+      <img class='props prop-2' src='{% static "pics/ddvq4wv-13d9c7fc-4a45-4608-8731-117c922fa49b.png"%}' alt='ass'>
+      <img class='props prop-3' src='{% static "pics/let_s_play_by_yakovlev_vad_dek25hg-pre.png"%}' alt='ass'>
+      <img class='props prop-4' src='{% static "pics/serene_morning_by_fluffymaiden_dduzvn2-fullview.jpg"%}' alt='ass'>
+    </div>
+  </div>
+  <div class="about">
+    <h1 class='trans'>Credits</h1>
+    <div class='frame'>
+      <h1 class="name-contain">nar2 <span class='pink' >p1nk</span></h1>
+      <p class='occu'>developed and design gallary</p>
+    </div>
+  </div>
 </body>
 </html>
+

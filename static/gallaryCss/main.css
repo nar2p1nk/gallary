@@ -12,7 +12,7 @@ body{height: max-content;}
   overflow: hidden;
   background-color: #352d68;
   border-radius: 15px;
-  border: 2px solid #352d68;
+/*  border: 2px solid #ff189b;*/
 }
 
 .button {
