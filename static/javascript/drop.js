@@ -1,34 +1,9 @@
-{% load static %}
-
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>Gallary</title>
-  <link rel='stylesheet' type='text/css'  href='{% static 'gallaryCss/form.css' %}'>
-  <!--script src=""></script--> 
-</head>
-<body>
-  <h1 class='h1'>Post</h1>
-  <div class='container'>
-    <form enctype="multipart/form-data" class="form" method='post'>
-      {% csrf_token %}
-      <div class="drop-zone">
-        <span class="prompt">Drop file here</span>
-        {{form.img}}
-      </div>
-      {{form.title}}
-      {{form.created_by}}
-      <button class='btn' type='submit'>Post</button>
-      {% csrf_token %}
-    </form>
-  </div>
-<script>
 document.querySelectorAll('.input').forEach(inputElement =>{
   const dropZoneElement = inputElement.closest('.drop-zone');
 
   dropZoneElement.addEventListener('click', listener =>{
     inputElement.click();
+    console.log('clicked')
   })
 
   inputElement.addEventListener('change', listener =>{
@@ -43,6 +18,7 @@ document.querySelectorAll('.input').forEach(inputElement =>{
   dropZoneElement.addEventListener('dragover', e =>{
     e.preventDefault()
     dropZoneElement.classList.add('drop-zone--over')
+    console.log('dragover')
   });
 
   ['dragleave','dragend'].forEach(type =>{
@@ -53,6 +29,7 @@ document.querySelectorAll('.input').forEach(inputElement =>{
 
   dropZoneElement.addEventListener('drop', e =>{
     e.preventDefault()
+    console.log('drop')
     
 
     if(e.dataTransfer.files.length){
@@ -89,7 +66,7 @@ function updateThumb(dropZoneElement,file){
     dropZoneElement.appendChild(thumbElement)
   }
 
-//  thumbElement.dataset.label = file.name
+  thumbElement.dataset.label = file.name
   
   // show thumbnail for image file
   if(file.type.startsWith('image/')){
@@ -104,6 +81,4 @@ function updateThumb(dropZoneElement,file){
     thumbElement.style.backgroundImage = null
   }
 }
-</script>
-</body>
-</html>
+console.log('ass')

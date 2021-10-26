@@ -1,7 +1,7 @@
-from django.http.response import HttpResponseRedirect
-from django.shortcuts import render
+from django.http.response import HttpResponse, HttpResponseRedirect
+from django.shortcuts import render,get_object_or_404
 from .models import Profiles
-from django.views.generic import ListView,CreateView
+from django.views.generic import ListView,CreateView,DetailView
 #from django.http import HttpResponseRedirect
 from .forms import PostForm,PostForm2
 from django.urls import reverse_lazy
@@ -22,5 +22,9 @@ class send(CreateView):
 def home(request):
     return render(request, 'home.html',{})
 
-# homepage1 | homepage2
-#     1            2
+class Detail(DetailView):
+    model=Profiles
+    template_name = 'detail.html'
+
+
+

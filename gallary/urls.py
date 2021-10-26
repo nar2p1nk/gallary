@@ -1,9 +1,9 @@
-from django.conf.urls import url
-
-from .views import Display,send,home
+from django.urls import path
+from .views import Display,send,home,Detail
 
 urlpatterns = [
-        url('home/', home, name='home'),
-        url('browse/', Display.as_view(), name='gallary'),
-        url('post/',send.as_view(), name='post'),
+        path('home/', home, name='home'),
+        path('browse/', Display.as_view(), name='gallary'),
+        path('post/',send.as_view(), name='post'),
+        path('<int:pk>/detail/', Detail.as_view(), name='detail'),
 ]
