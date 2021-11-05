@@ -14,7 +14,7 @@
     <form enctype="multipart/form-data" class="form" method='post'>
       {% csrf_token %}
       <div class="drop-zone">
-        <span class="prompt">Drop file here</span>
+        <span class="prompt">Drop picture here!</span>
         {{form.img}}
       </div>
       {{form.title}}
@@ -89,20 +89,49 @@ function updateThumb(dropZoneElement,file){
     dropZoneElement.appendChild(thumbElement)
   }
 
+	if(file.type.startsWith('image/')){
+			if(thumbElement.querySelector('.image')){
+				thumbElement.querySelector('.image').remove()
+			
+				Img = document.createElement('img');
+				Img.classList.add('image');
+				thumbElement.appendChild(Img);
+				const reader = new FileReader();
+
+				reader.readAsDataURL(file);
+				reader.onload = () =>{
+						Img.src = reader.result
+					}
+				}
+			else{
+			Img = document.createElement('img');
+                        Img.classList.add('image');
+                        thumbElement.appendChild(Img);
+                        const reader = new FileReader();
+
+                        reader.readAsDataURL(file);
+                        reader.onload = () =>{
+                                        Img.src = reader.result
+                        }		
+			}
+
+
+	}
+
 //  thumbElement.dataset.label = file.name
   
   // show thumbnail for image file
-  if(file.type.startsWith('image/')){
-    const reader = new FileReader();
+//  if(file.type.startsWith('image/')){
+  //  const reader = new FileReader();
 
-    reader.readAsDataURL(file);
-    reader.onload = () =>{
-      thumbElement.style.backgroundImage = `url('${reader.result}')`;
-    }
-  }
-  else{
-    thumbElement.style.backgroundImage = null
-  }
+    //reader.readAsDataURL(file);
+    //reader.onload = () =>{
+      //thumbElement.style.backgroundImage = `url('${reader.result}')`;
+    //}
+  //}
+  //else{
+    //thumbElement.style.backgroundImage = null
+  //}
 }
 </script>
 </body>
