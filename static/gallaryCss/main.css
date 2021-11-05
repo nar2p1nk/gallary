@@ -1,5 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
-html{font-family: 'poppins',sans-serif;height: max-content;background-color: #1a1a1a;}
+html{font-family: 'poppins',sans-serif;height: max-content;}
 body{height: max-content;}
 .NavList {
   display: flex;
@@ -10,7 +10,7 @@ body{height: max-content;}
   margin: auto;
   padding: 0;
   overflow: hidden;
-  background-color: #352d68;
+  background-color: #ff189b;
   border-radius: 15px;
 /*  border: 2px solid #ff189b;*/
 }
@@ -36,7 +36,7 @@ body{height: max-content;}
 /*Change the link color to #111 (black) on hover */
 .button a:hover {
   background-color: white;
-  color: #352d68;
+  color: #ff189b;
 }
 .home{border-right: 1px solid white;}
 .post{border-left: 1px solid white;}
@@ -73,12 +73,12 @@ body{height: max-content;}
     transform: translate(-50%, -50%);
     /* background-color: rgb(5, 47, 83,1); */
     border-radius: 15px;
-    color: rgb(179, 179, 179,0);
+    color: rgb(255, 255, 255,0);
     transition: 0.2s;
 }
 .overlay:hover{
-    background-color: rgb(53, 45, 104,0.5);
-    color: rgb(179, 179, 179);
+    background-color: rgb(255, 24, 155,0.5);
+    color: rgb(255, 255, 255,1);
 }
 
 .pp{
