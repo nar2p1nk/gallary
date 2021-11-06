@@ -1,5 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
-html{font-family: 'poppins',sans-serif;height: max-content;}
+html{font-family: 'poppins',sans-serif;height: max-content;background-color: #1a1a1a;}
 body{height: max-content;}
 .NavList {
   display: flex;
