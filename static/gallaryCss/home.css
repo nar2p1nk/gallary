@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');    
 
-@media only screen and (min-width: 10px){
+/*@media only screen and (min-width: 10px){*/
 .tD{
 display: none;
 }
@@ -101,7 +101,10 @@ height: 3rem;
 height: min-content;
 font-size: 35px;
 }
-}
+
+
+
+
 
 
 @media only screen and (min-width: 1300px){
